@@ -9,12 +9,18 @@ import (
 
 func main() {
 
-	router := mux.NewRouter()
+	r := mux.NewRouter()
 
-	router.Handle("/", http.FileServer(http.Dir("./views/")))
+	r.Handle("/", http.FileServer(http.Dir("./views/")))
 
-	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static/"))))
+	r.Handle("/status", NotImplemented).Methods("GET")
+	r.Handle("/products", NotImplemented).Methods("GET")
+	r.Handle("/products/{slug}/feedback", NotImplemented).Methods("POST")
 
-	http.ListenAndServe(":8000", router)
+	http.ListenAndServe(":8000", r)
 
 }
+
+var NotImplemented = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Not Implemented"))
+})
