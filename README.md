@@ -1,7 +1,8 @@
 # Service authentication
 
-## Made using Golang.
+## Made using Go and React.
 
-### The whole application is going to be coded in the main.go file. It's not correct, but this case is just for learning purposes.
-### After finishing the program i will do some refactor to actually have the application as modular as possible, with the intention of
-### learning more about how to modularize code in Go.
+### This is a tutorial provided by auth0.com, to teach how to implement a basic authentication middleware using Go, and implemented in React.
+
+#### Link of the tutorial: https://auth0.com/blog/authentication-in-golang/
+
